@@ -3,9 +3,7 @@ package com.example.ecommerce.model;
 import jakarta.validation.constraints.*;
 import java.math.BigDecimal;
 
-/**
- * Product — an item available for purchase in the store.
- */
+
 public class Product {
 
     private Long id;
@@ -43,7 +41,7 @@ public class Product {
         this.stock -= quantity;
     }
 
-    // Getters & Setters
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getName() { return name; }
