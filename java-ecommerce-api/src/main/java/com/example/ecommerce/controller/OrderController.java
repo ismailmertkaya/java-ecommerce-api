@@ -8,15 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Map;
 
-/**
- * Order endpoints:
- *   GET  /api/orders                        → all orders
- *   GET  /api/orders/{id}                   → single order
- *   GET  /api/orders?email=x@x.com          → orders by customer email
- *   GET  /api/orders?status=PENDING         → orders by status
- *   POST /api/orders                        → place new order
- *   PUT  /api/orders/{id}/status            → update order status
- */
+
 @RestController
 @RequestMapping("/api/orders")
 public class OrderController {
@@ -41,16 +33,6 @@ public class OrderController {
         return ResponseEntity.ok(orderService.getOrderById(id));
     }
 
-    /**
-     * Place a new order.
-     * Request body example:
-     * {
-     *   "customerName": "Ali Yılmaz",
-     *   "customerEmail": "ali@example.com",
-     *   "shippingAddress": "Kadıköy, İstanbul",
-     *   "items": {"1": 2, "3": 1}   ← productId: quantity
-     * }
-     */
     @PostMapping
     public ResponseEntity<Order> placeOrder(@RequestBody Map<String, Object> body) {
         String name = (String) body.get("customerName");
