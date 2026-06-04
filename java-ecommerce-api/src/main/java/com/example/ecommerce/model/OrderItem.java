@@ -2,16 +2,13 @@ package com.example.ecommerce.model;
 
 import java.math.BigDecimal;
 
-/**
- * OrderItem — a single product line within an order.
- * Captures the price at time of purchase (price may change later).
- */
+
 public class OrderItem {
 
     private Long productId;
     private String productName;
     private int quantity;
-    private BigDecimal unitPrice; // price at time of order
+    private BigDecimal unitPrice; 
 
     public OrderItem() {}
 
@@ -22,12 +19,12 @@ public class OrderItem {
         this.unitPrice = unitPrice;
     }
 
-    /** quantity × unitPrice */
+   
     public BigDecimal getSubtotal() {
         return unitPrice.multiply(BigDecimal.valueOf(quantity));
     }
 
-    // Getters & Setters
+ 
     public Long getProductId() { return productId; }
     public void setProductId(Long productId) { this.productId = productId; }
     public String getProductName() { return productName; }
