@@ -5,17 +5,15 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Order — a customer's purchase request containing one or more items.
- */
+
 public class Order {
 
     public enum Status {
-        PENDING,    // just created, payment not confirmed
-        CONFIRMED,  // payment confirmed
-        SHIPPED,    // on the way
-        DELIVERED,  // received by customer
-        CANCELLED   // cancelled
+        PENDING,   
+        CONFIRMED, 
+        SHIPPED,    
+        DELIVERED,  
+        CANCELLED  
     }
 
     private Long id;
@@ -35,7 +33,7 @@ public class Order {
         this.shippingAddress = shippingAddress;
     }
 
-    /** Calculate total price of all items in this order */
+  
     public BigDecimal getTotalPrice() {
         return items.stream()
                 .map(OrderItem::getSubtotal)
@@ -48,7 +46,7 @@ public class Order {
 
     public void addItem(OrderItem item) { items.add(item); }
 
-    // Getters & Setters
+ 
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public String getCustomerName() { return customerName; }
