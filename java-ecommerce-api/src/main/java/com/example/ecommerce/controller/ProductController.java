@@ -8,15 +8,7 @@ import org.springframework.http.*;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
-/**
- * Product endpoints:
- *   GET    /api/products              → all products
- *   GET    /api/products/{id}         → single product
- *   GET    /api/products/in-stock     → only in-stock products
- *   GET    /api/products?category=X   → filter by category
- *   POST   /api/products              → add product
- *   PUT    /api/products/{id}         → update product
- *   DELETE /api/products/{id}         → remove product
+
  */
 @RestController
 @RequestMapping("/api/products")
